@@ -25,11 +25,15 @@
                                 <rect key="frame" x="87" y="250" width="200" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twsitit.png" translatesAutoresizingMaskIntoConstraints="NO" id="RM4-mw-hsw">
+                            <imageView tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twsitit.png" translatesAutoresizingMaskIntoConstraints="NO" id="RM4-mw-hsw">
                                 <rect key="frame" x="99" y="114" width="177" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iRE-5J-z9u" appends="YES" id="WS5-1c-J8Q"/>
+                                </connections>
                             </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pullit.png" translatesAutoresizingMaskIntoConstraints="NO" id="As2-sk-1b8">
+                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pullit.png" translatesAutoresizingMaskIntoConstraints="NO" id="As2-sk-1b8">
                                 <rect key="frame" x="141" y="436" width="92" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -64,12 +68,18 @@
                     </view>
                     <connections>
                         <outlet property="pullIt" destination="As2-sk-1b8" id="oTB-tR-V4e"/>
+                        <outlet property="twistIt" destination="RM4-mw-hsw" id="L62-fP-Qne"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="wJL-tE-Oms">
                     <connections>
-                        <action selector="handlePan:" destination="BYZ-38-t0r" id="1he-7d-IF1"/>
+                        <action selector="handlePullPan:" destination="BYZ-38-t0r" id="IdM-VN-m2t"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="iRE-5J-z9u">
+                    <connections>
+                        <action selector="handleTwistPan:" destination="BYZ-38-t0r" id="aOL-wV-SnA"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

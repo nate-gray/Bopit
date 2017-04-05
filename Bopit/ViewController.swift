@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var pullIt: UIImageView!
+    @IBOutlet weak var twistIt: UIImageView!
+
     
 
     override func viewDidLoad() {
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
     
     //MARK: Gesture Handlers
     
-    @IBAction func handlePan(_ recognizer:UIPanGestureRecognizer) {
+    @IBAction func handlePullPan(_ recognizer:UIPanGestureRecognizer) {
         
             
             let translation = recognizer.translation(in: self.view)
@@ -45,7 +47,33 @@ class ViewController: UIViewController {
             recognizer.setTranslation(CGPoint.zero, in: self.view)
         
         if recognizer.state == .ended {
-            resetArrow()
+            resetPull()
+        }
+        
+        
+    }
+
+    @IBAction func handleTwistPan(_ recognizer:UIPanGestureRecognizer) {
+        
+        
+        let translation = recognizer.translation(in: self.view)
+        
+        let vel = recognizer.velocity(in: self.view)
+        
+        if vel.x > 0 {
+            
+            if let view = recognizer.view {
+                view.center = CGPoint(x:view.center.x + translation.x,
+                                      y:view.center.y)
+                
+            }
+            
+        }
+        
+        recognizer.setTranslation(CGPoint.zero, in: self.view)
+        
+        if recognizer.state == .ended {
+            resetTwist()
         }
         
         
@@ -53,9 +81,15 @@ class ViewController: UIViewController {
     
     //MARK: Reset Objects
 
-    func resetArrow() {
+    func resetPull() {
         
         pullIt.frame = CGRect(x: 141, y: 436, width: 92, height: 133)
+        
+    }
+    
+    func resetTwist() {
+        
+        twistIt.frame = CGRect(x: 99, y: 114, width: 177, height: 128)
         
     }
 
