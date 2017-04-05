@@ -29,9 +29,13 @@
                                 <rect key="frame" x="99" y="114" width="177" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pullit.png" translatesAutoresizingMaskIntoConstraints="NO" id="As2-sk-1b8">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pullit.png" translatesAutoresizingMaskIntoConstraints="NO" id="As2-sk-1b8">
                                 <rect key="frame" x="141" y="436" width="92" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wJL-tE-Oms" appends="YES" id="mOt-Lg-Wlv"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daE-Xj-bVe">
                                 <rect key="frame" x="16" y="648" width="343" height="19"/>
@@ -58,8 +62,16 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="pullIt" destination="As2-sk-1b8" id="oTB-tR-V4e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="wJL-tE-Oms">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="1he-7d-IF1"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
         </scene>
