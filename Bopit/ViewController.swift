@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomBoundry: UIImageView!
     @IBOutlet weak var rightBoundry: UIImageView!
     @IBOutlet weak var score: UILabel!
-
+    var realScore = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,9 +88,12 @@ class ViewController: UIViewController {
     
     @IBAction func handleBopTap(_ recognizer: UITapGestureRecognizer) {
         
-        
+        realScore += 1
+        score.text = String(realScore)
         
     }
+    
+
     
     //MARK: Reset Objects
 
@@ -110,6 +113,17 @@ class ViewController: UIViewController {
     
     func gameLogic(theTimer: CADisplayLink) {
        
+        if pullIt.frame.intersects (bottomBoundry.frame) {
+            realScore += 1
+            resetPull()
+            score.text = String(realScore)
+        }
+        
+        if twistIt.frame.intersects (rightBoundry.frame) {
+            realScore += 1
+            resetTwist()
+            score.text = String(realScore)
+        }
         
         
     }

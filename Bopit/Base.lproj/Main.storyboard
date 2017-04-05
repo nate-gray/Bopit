@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bopit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kji-fY-w4E">
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bopit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kji-fY-w4E">
                                 <rect key="frame" x="87" y="250" width="200" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
@@ -92,7 +92,7 @@
                 </panGestureRecognizer>
                 <tapGestureRecognizer id="3jL-uW-9ZH">
                     <connections>
-                        <action selector="handleBopTap:" destination="BYZ-38-t0r" id="KNA-aT-sub"/>
+                        <action selector="handleBopTap:" destination="BYZ-38-t0r" id="ghB-Wg-FvR"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
