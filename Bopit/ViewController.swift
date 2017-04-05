@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var pullIt: UIImageView!
     @IBOutlet weak var twistIt: UIImageView!
+    @IBOutlet weak var bopIt: UIImageView!
+    @IBOutlet weak var bottomBoundry: UIImageView!
+    @IBOutlet weak var rightBoundry: UIImageView!
+    @IBOutlet weak var score: UILabel!
 
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        initializeTimer()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,6 +86,12 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func handleBopTap(_ recognizer: UITapGestureRecognizer) {
+        
+        
+        
+    }
+    
     //MARK: Reset Objects
 
     func resetPull() {
@@ -92,6 +105,24 @@ class ViewController: UIViewController {
         twistIt.frame = CGRect(x: 99, y: 114, width: 177, height: 128)
         
     }
-
+    
+    //MARK: Game Logic
+    
+    func gameLogic(theTimer: CADisplayLink) {
+       
+        
+        
+    }
+    
+    func initializeTimer() {
+        
+        let theTimer = CADisplayLink(target: self, selector: #selector(gameLogic(theTimer:)))
+        
+        theTimer.preferredFramesPerSecond = 30
+        theTimer.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        
+        
+    }
+    
 }
 

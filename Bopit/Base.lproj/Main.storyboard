@@ -24,6 +24,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bopit.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kji-fY-w4E">
                                 <rect key="frame" x="87" y="250" width="200" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3jL-uW-9ZH" appends="YES" id="ssZ-vP-Com"/>
+                                </connections>
                             </imageView>
                             <imageView tag="2" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twsitit.png" translatesAutoresizingMaskIntoConstraints="NO" id="RM4-mw-hsw">
                                 <rect key="frame" x="99" y="114" width="177" height="128"/>
@@ -67,7 +71,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="bopIt" destination="Kji-fY-w4E" id="MxG-By-kpj"/>
+                        <outlet property="bottomBoundry" destination="daE-Xj-bVe" id="jLB-B1-y0T"/>
                         <outlet property="pullIt" destination="As2-sk-1b8" id="oTB-tR-V4e"/>
+                        <outlet property="rightBoundry" destination="wMd-qh-xI5" id="cPQ-fm-DqZ"/>
+                        <outlet property="score" destination="HRn-TM-F4M" id="vza-Rg-4h2"/>
                         <outlet property="twistIt" destination="RM4-mw-hsw" id="L62-fP-Qne"/>
                     </connections>
                 </viewController>
@@ -82,6 +90,11 @@
                         <action selector="handleTwistPan:" destination="BYZ-38-t0r" id="aOL-wV-SnA"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="3jL-uW-9ZH">
+                    <connections>
+                        <action selector="handleBopTap:" destination="BYZ-38-t0r" id="KNA-aT-sub"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
         </scene>

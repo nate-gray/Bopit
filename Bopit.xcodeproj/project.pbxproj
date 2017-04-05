@@ -15,6 +15,7 @@
 		4E91421D1E9468AC00515B8F /* bopit.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E91421A1E9468AC00515B8F /* bopit.png */; };
 		4E91421E1E9468AC00515B8F /* pullit.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E91421B1E9468AC00515B8F /* pullit.png */; };
 		4E91421F1E9468AC00515B8F /* twsitit.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E91421C1E9468AC00515B8F /* twsitit.png */; };
+		4E9142221E947EFD00515B8F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9142211E947EFD00515B8F /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4E91421A1E9468AC00515B8F /* bopit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bopit.png; sourceTree = "<group>"; };
 		4E91421B1E9468AC00515B8F /* pullit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pullit.png; sourceTree = "<group>"; };
 		4E91421C1E9468AC00515B8F /* twsitit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twsitit.png; sourceTree = "<group>"; };
+		4E9142211E947EFD00515B8F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9142221E947EFD00515B8F /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				4E9142071E9468A600515B8F /* Bopit */,
 				4E9142061E9468A600515B8F /* Products */,
+				4E9142201E947EFD00515B8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +75,14 @@
 				4E9142141E9468A600515B8F /* Info.plist */,
 			);
 			path = Bopit;
+			sourceTree = "<group>";
+		};
+		4E9142201E947EFD00515B8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E9142211E947EFD00515B8F /* QuartzCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +323,7 @@
 				4E9142191E9468A600515B8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
